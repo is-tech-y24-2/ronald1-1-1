@@ -4,6 +4,7 @@ import ru.itmo.banks.bank.Bank;
 import ru.itmo.banks.bank.CentralBank;
 
 public class DepositAccount extends Account {
+    private final float yearPercent = 365 * 100;
     private int timeLimit;
     private int time;
     private float moneyBuffer;
@@ -12,7 +13,7 @@ public class DepositAccount extends Account {
         super(clientId, centralBank, bank);
         this.timeLimit = timeLimit;
         this.time = 0;
-        this.moneyBuffer = 0;
+        this.moneyBuffer = nullMoney;
     }
 
     @Override
@@ -37,12 +38,12 @@ public class DepositAccount extends Account {
     public void dayPassed() {
         time++;
         if (time <= timeLimit) {
-            moneyBuffer += (money + this.bank.getPayPercent()) / (365 * 100);
+            moneyBuffer += (money + this.bank.getPayPercent()) / yearPercent;
         }
 
         if (time == timeLimit) {
             money += moneyBuffer;
-            moneyBuffer = 0;
+            moneyBuffer = nullMoney;
         }
     }
 }

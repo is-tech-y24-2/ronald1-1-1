@@ -5,8 +5,6 @@ import ru.itmo.banks.account.IAccount;
 public class Transaction {
     private static int id = 0;
 
-
-
     private IAccount accountFrom;
     private IAccount accountTo;
     private  float money;

@@ -36,7 +36,7 @@ public class CreditAccount extends Account {
 
     @Override
     public void dayPassed() {
-        if (this.money < 0 && this.money > -this.bank.getCreditLimit()) {
+        if (this.money < nullMoney && this.money > -this.bank.getCreditLimit()) {
             this.money -= this.bank.getCommission();
         }
     }

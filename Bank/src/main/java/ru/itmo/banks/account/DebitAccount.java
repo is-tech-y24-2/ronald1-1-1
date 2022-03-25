@@ -4,6 +4,7 @@ import ru.itmo.banks.bank.Bank;
 import ru.itmo.banks.bank.CentralBank;
 
 public class DebitAccount extends Account {
+    private final int daysInMonth = 30;
     private float moneyBuffer;
     private int monthDays;
 
@@ -17,7 +18,7 @@ public class DebitAccount extends Account {
     public void dayPassed() {
         moneyBuffer += (this.money * this.bank.getPayPercent()) / (365 * 100);
         monthDays++;
-        if (monthDays == 30) {
+        if (monthDays == daysInMonth) {
             monthDays = 0;
             super.money += moneyBuffer;
         }

@@ -4,6 +4,7 @@ import ru.itmo.banks.account.IAccount;
 import ru.itmo.banks.bank.Bank;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ConfirmedClient extends ClientDecorator {
     private String passport;
@@ -24,7 +25,7 @@ public class ConfirmedClient extends ClientDecorator {
     }
 
     @Override
-    public ArrayList<IAccount> getAccounts() {
+    public List<IAccount> getAccounts() {
         return client.getAccounts();
     }
 

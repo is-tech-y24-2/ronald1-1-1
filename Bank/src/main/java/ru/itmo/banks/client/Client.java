@@ -4,11 +4,12 @@ import ru.itmo.banks.account.IAccount;
 import ru.itmo.banks.bank.Bank;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Client {
 
     private static int id = 0;
-    private ArrayList<IAccount> accounts;
+    private List<IAccount> accounts;
     private String name;
     private String surname;
     private int clientId;
@@ -45,8 +46,8 @@ public class Client {
         this.bank = bank;
     }
 
-    public ArrayList<IAccount> getAccounts() {
-        return (ArrayList<IAccount>) accounts.clone();
+    public List<IAccount> getAccounts() {
+        return accounts;
     }
 
     public void addAccount(IAccount account) {

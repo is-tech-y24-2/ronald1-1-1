@@ -4,10 +4,11 @@ import ru.itmo.banks.client.Client;
 import ru.itmo.banks.account.IAccount;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Bank {
     private String name;
-    private ArrayList<Client> clients;
+    private List<Client> clients;
     private float commission;
     private float payPercent;
     private float creditLimit;
@@ -22,8 +23,8 @@ public class Bank {
         this.notConfirmedLimit = notConfirmedLimit;
     }
 
-    public ArrayList<Client> getClients(){
-        return (ArrayList<Client>) clients.clone();
+    public List<Client> getClients(){
+        return clients;
     }
 
     public float getCommission() {

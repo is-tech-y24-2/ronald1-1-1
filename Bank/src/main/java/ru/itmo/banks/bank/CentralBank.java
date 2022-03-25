@@ -10,12 +10,13 @@ import ru.itmo.banks.client.ConfirmedClient;
 import ru.itmo.banks.exception.BankException;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CentralBank {
-    private ArrayList<Bank> banks;
-    private ArrayList<Transaction> transactions;
-    private ArrayList<Client> clients;
-    private ArrayList<IAccount> accounts;
+    private List<Bank> banks;
+    private List<Transaction> transactions;
+    private List<Client> clients;
+    private List<IAccount> accounts;
 
     public CentralBank() {
         this.banks = new ArrayList<>();
@@ -24,12 +25,12 @@ public class CentralBank {
         this.accounts = new ArrayList<>();
     }
 
-    public ArrayList<Bank> getBanks() {
-        return (ArrayList<Bank>) banks.clone();
+    public List<Bank> getBanks() {
+        return banks;
     }
 
-    public ArrayList<Transaction> getTransactions() {
-        return (ArrayList<Transaction>) transactions.clone();
+    public List<Transaction> getTransactions() {
+        return transactions;
     }
 
     public Bank addBank(String name, float commissionPercent, float payPercent, float creditLimit, float notConfirmedLimit) {

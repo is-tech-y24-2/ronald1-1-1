@@ -8,6 +8,7 @@ import ru.itmo.banks.bank.CentralBank;
 public class Account implements IAccount {
     private static int id = 0;
     private int accountId;
+    protected final float nullMoney = 0f;
     protected int clientId;
     protected CentralBank centralBank;
     protected Bank bank;
@@ -18,7 +19,7 @@ public class Account implements IAccount {
         this.clientId = clientId;
         this.centralBank = centralBank;
         this.bank = bank;
-        this.money = 0f;
+        this.money = nullMoney;
         this.accountId = ++id;
     }
 
