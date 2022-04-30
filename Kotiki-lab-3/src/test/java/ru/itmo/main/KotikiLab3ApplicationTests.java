@@ -42,7 +42,7 @@ class KotikiLab3ApplicationTests {
     private OwnerRepository ownerRepository;
 
     @Test
-    void testCatService(){
+    void testCatService() throws Exception {
         CatsEntity catsEntity = catService.saveCat("pol", "lop", Color.BLACK, new OwnersEntity(), new Date(12423423));
         Assert.assertEquals("pol", catsEntity.getName());
         Assert.assertEquals("lop", catsEntity.getBreed());
@@ -54,7 +54,7 @@ class KotikiLab3ApplicationTests {
     }
 
     @Test
-    void testOwnerService(){
+    void testOwnerService() throws Exception {
         OwnersEntity ownersEntity = ownerService.saveOwner("popo",new Date(1231243));
         Assert.assertEquals("popo", ownersEntity.getName());
         Assert.assertEquals(new Date(1231243), ownersEntity.getBirthday());

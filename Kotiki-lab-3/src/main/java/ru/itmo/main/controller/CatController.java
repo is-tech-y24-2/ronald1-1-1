@@ -41,6 +41,7 @@ public class CatController {
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity getCats(
             @RequestParam(required = false) Color color){
+        System.out.println("sdfsdfsdf");
         try {
             List<CatsEntity> catsEntities;
             if (color != null) {
