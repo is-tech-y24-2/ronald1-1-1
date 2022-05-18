@@ -25,6 +25,10 @@ public class OwnersEntity {
             fetch = FetchType.EAGER)
     private Set<CatsEntity> cats;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "usr_id")
+    private UserEntity user;
+
     public Set<CatsEntity> getCats(){
         return cats;
     }
@@ -51,6 +55,14 @@ public class OwnersEntity {
 
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
+    }
+
+    public void setUser(UserEntity user){
+        this.user = user;
+    }
+
+    public UserEntity getUser(){
+        return user;
     }
 
     @Override
